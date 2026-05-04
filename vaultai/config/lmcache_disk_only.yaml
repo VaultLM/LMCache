@@ -1,0 +1,23 @@
+# LMCache config — disk-tier benchmark (NVMe performance measurement)
+#
+# local_cpu: true  — LocalCPUBackend is required; storage_manager._get_allocator_backend()
+#                    always keys into storage_backends["LocalCPUBackend"] even when the
+#                    backend is only used as a memory allocator. Setting local_cpu: false
+#                    causes a KeyError crash at init.
+#
+# max_local_cpu_size: 5  — Small RAM pool to accommodate large-object allocations during
+#                          PUT. The benchmark closes the SM after each PUT (dropping RAM),
+#                          then opens a fresh cold SM for GET — forcing all reads from NVMe.
+#
+# save_unfull_chunk: true — Required so partial chunks are written to disk immediately
+#                           rather than waiting for a full chunk boundary.
+
+chunk_size: 256
+local_cpu: true
+max_local_cpu_size: 5
+save_unfull_chunk: true
+remote_serde: "naive"
+remote_url: "fs://localhost:0/tmp/vaultai_disk_bench"
+
+extra_config:
+  save_chunk_meta: true
