@@ -1,0 +1,16 @@
+# LMCache config — VaultAI Business Node (AMD AI MAX 395+, CPU mode)
+#
+# Use this config until vLLM ROCm is validated and cachegen .cuda() calls are patched.
+# KV tensors live in unified 128GB pool — no PCIe penalty between CPU and GPU tiers.
+
+chunk_size: 256
+local_cpu: true
+max_local_cpu_size: 20      # GB of unified RAM for hot KV cache
+save_unfull_chunk: false
+remote_serde: "naive"       # safe on AMD — avoids cachegen hardcoded .cuda() calls
+
+# Overflow to disk once RAM cap is hit
+remote_url: "fs://localhost:0/var/vaultai/lmcache"
+
+extra_config:
+  save_chunk_meta: true
