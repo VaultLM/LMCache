@@ -1,0 +1,66 @@
+# LMCache CPU mode test dependencies — no vLLM, no model, no GPU
+#
+# Verified by running the 7 CPU mode tests on 2026-05-04.
+# All packages listed here have top-level imports on the test_storage_manager path.
+# Packages discovered through actual install failures, not static analysis.
+#
+# Install order:
+#   1. uv venv --python 3.12 vaultai/vllm && source vaultai/vllm/bin/activate
+#   2. uv pip install torch --index-url https://download.pytorch.org/whl/rocm6.2
+#   3. uv pip install "setuptools>=77.0.3,<81.0.0" setuptools_scm
+#   4. NO_CUDA_EXT=1 uv pip install -e . --no-build-isolation --no-deps
+#   5. uv pip install -r vaultai/requirements/cpu_test.txt
+#
+# torch is intentionally NOT listed — it must come from the ROCm wheel index (step 2).
+# Listing it here without an index constraint would replace the ROCm build with CUDA.
+#
+# setuptools is NOT listed — step 3 handles it before LMCache editable install.
+# The torch wheel ships setuptools 70.x; LMCache's pyproject.toml needs >=77.0.3.
+
+# --- config / startup path ---
+
+# lmcache/v1/config_base.py (top-level)
+requests
+
+# lmcache/usage_context.py (top-level) — hardware telemetry
+py-cpuinfo
+
+# lmcache/v1/config.py → config_base.py (top-level)
+pyyaml
+
+# lmcache/connections.py → used by usage_context (top-level)
+aiohttp
+
+# --- check mode registry ---
+
+# check_mode_gen.py (top-level). The registry loads all check_mode_* modules at
+# startup and silently drops any that fail — a missing tqdm causes
+# check_mode_test_storage_manager to fail to register, producing 0 loaded modes.
+tqdm
+
+# --- storage backends ---
+
+# lmcache/observability.py (top-level), imported by storage_manager.py,
+# local_cpu_backend.py, and remote_backend.py
+prometheus_client >= 0.18.0, <= 0.24.1
+
+# lmcache/v1/memory_management.py (top-level) — SortedList for memory pool
+sortedcontainers
+
+# lmcache/v1/storage_backend/connector/fs_connector.py (top-level)
+# Required even for RAM-only tests because RemoteBackend is always constructed
+# when remote_url is set in the config.
+aiofiles
+
+# --- Python fallback kernel (non_cuda_equivalents.py) ---
+
+# lmcache/non_cuda_equivalents.py imports njit at top level.
+# This is LMCache's own CPU fallback for KV transfer kernels, not just a nixl dep.
+# numba requires numpy < 3; pin matches common.txt constraint.
+numba
+numpy<=2.2.6
+
+# --- test-specific ---
+
+# Test 7 memory footprint check (psutil.Process)
+psutil

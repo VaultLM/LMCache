@@ -1,0 +1,2 @@
+remote_serde: naive
+cachegen modules in sys.modules: [] (none — PASS)

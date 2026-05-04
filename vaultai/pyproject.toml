@@ -1,0 +1,36 @@
+[project]
+name = "vaultai-lmcache-env"
+version = "0.1.0"
+description = "VaultAI environment spec for LMCache on AMD AI MAX 395+"
+requires-python = ">=3.12"
+
+# Minimal deps for CPU mode tests (test_storage_manager path).
+# torch is declared separately below via [tool.uv.sources] — it must come
+# from the ROCm index, never from PyPI.
+dependencies = [
+    "torch",
+    "prometheus_client>=0.18.0,<=0.24.1",
+    "sortedcontainers",
+    "aiofiles",
+    "pyyaml",
+    "psutil",
+]
+
+# When vLLM ROCm is ready to add:
+#   uv add vllm --index-url https://download.pytorch.org/whl/rocm6.2
+# uv will extend this file and re-lock.
+
+[tool.uv]
+# Override the torch source so uv never pulls a CUDA build from PyPI.
+# All torch resolutions in this project use the ROCm index.
+override-dependencies = [
+    "torch",
+]
+
+[[tool.uv.index]]
+name = "rocm"
+url = "https://download.pytorch.org/whl/rocm6.2"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "rocm" }

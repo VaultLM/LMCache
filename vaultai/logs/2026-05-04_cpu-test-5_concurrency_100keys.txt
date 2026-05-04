@@ -1,0 +1,18 @@
+Test: Passed - Created storage manager with valid config
+Phase 1: Testing exists for non-existing keys...
+  Validation: 100/100 passed (100.0%)
+Phase 2: Testing put operations...
+  Validation: 100/100 passed (100.0%)
+Phase 3: Testing exists for existing keys...
+  Validation: 100/100 passed (100.0%)
+Phase 4: Testing get operations...
+  Validation (not None): 100/100 passed
+  Validation (content correct): 100/100 passed (100.0%)
+Performance Results:
+----------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------
+| EXISTS (non-exist)   |     0.057868 |     1.288386 |     0.032709 |    100/100 |     100.0% | |       -       
+| PUT                  |     0.077236 |     0.401926 |     0.054668 |    100/100 |     100.0% | |   25.29 MB/s  
+| EXISTS (exist)       |     0.059448 |     0.221972 |     0.021730 |    100/100 |     100.0% | |       -       
+| GET                  |     0.067774 |     0.117196 |     0.030179 |    100/100 |     100.0% | |   28.82 MB/s  
+----------------------------------------------------------------------------------------------------------------------

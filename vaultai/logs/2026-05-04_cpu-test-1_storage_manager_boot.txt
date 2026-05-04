@@ -1,0 +1,76 @@
+[33;20m[2026-05-04 16:07:25,253] LMCache WARNING:[0m Failed to import backend lmcache.c_ops: No module named 'lmcache.c_ops' [3m(__init__.py:65:lmcache)[0m
+[33;20m[2026-05-04 16:07:25,254] LMCache WARNING:[0m Fallback to python backend lmcache.non_cuda_equivalents [3m(__init__.py:69:lmcache)[0m
+[32;20m[2026-05-04 16:07:25,324] LMCache INFO:[0m Using backend: lmcache.non_cuda_equivalents [3m(__init__.py:71:lmcache)[0m
+[32;20m[2026-05-04 16:07:26,576] LMCache INFO:[0m Loaded 4 check modes [3m(__init__.py:53:lmcache.v1.check)[0m
+[32;20m[2026-05-04 16:07:26,577] LMCache INFO:[0m Loading LMCache config file vaultai/config/lmcache_cpu.yaml [3m(utils.py:106:lmcache.integration.vllm.utils)[0m
+[32;20m[2026-05-04 16:07:26,579] LMCache INFO:[0m Initializing LRUCachePolicy [3m(lru.py:22:lmcache.v1.storage_backend.cache_policy.lru)[0m
+[32;20m[2026-05-04 16:07:26,579] LMCache INFO:[0m NUMA mapping None [3m(local_cpu_backend.py:369:lmcache.v1.storage_backend.local_cpu_backend)[0m
+[33;20m[2026-05-04 16:07:26,981] LMCache WARNING:[0m Controller message sender is not initialized [3m(local_cpu_backend.py:101:lmcache.v1.storage_backend.local_cpu_backend)[0m
+[33;20m[2026-05-04 16:07:26,981] LMCache WARNING:[0m remote_url is deprecated and will be removed in a future release. Please use remote_storage_plugins instead. [3m(__init__.py:267:lmcache.v1.storage_backend)[0m
+[32;20m[2026-05-04 16:07:26,981] LMCache INFO:[0m Initializing ConnectorManager [3m(__init__.py:231:lmcache.v1.storage_backend.connector)[0m
+[32;20m[2026-05-04 16:07:26,985] LMCache INFO:[0m Discovered adapter: AuditConnectorAdapter [3m(__init__.py:271:lmcache.v1.storage_backend.connector)[0m
+[32;20m[2026-05-04 16:07:26,985] LMCache INFO:[0m Discovered adapter: BlackholeConnectorAdapter [3m(__init__.py:271:lmcache.v1.storage_backend.connector)[0m
+[32;20m[2026-05-04 16:07:26,986] LMCache INFO:[0m Discovered adapter: EICConnectorAdapter [3m(__init__.py:271:lmcache.v1.storage_backend.connector)[0m
+[32;20m[2026-05-04 16:07:26,986] LMCache INFO:[0m Discovered adapter: ExternalConnectorAdapter [3m(__init__.py:271:lmcache.v1.storage_backend.connector)[0m
+[32;20m[2026-05-04 16:07:26,987] LMCache INFO:[0m Discovered adapter: FsConnectorAdapter [3m(__init__.py:271:lmcache.v1.storage_backend.connector)[0m
+[32;20m[2026-05-04 16:07:27,112] LMCache INFO:[0m Discovered adapter: HFBucketConnectorAdapter [3m(__init__.py:271:lmcache.v1.storage_backend.connector)[0m
+[32;20m[2026-05-04 16:07:27,112] LMCache INFO:[0m Discovered adapter: InfinistoreConnectorAdapter [3m(__init__.py:271:lmcache.v1.storage_backend.connector)[0m
+[32;20m[2026-05-04 16:07:27,113] LMCache INFO:[0m Discovered adapter: LMServerConnectorAdapter [3m(__init__.py:271:lmcache.v1.storage_backend.connector)[0m
+[32;20m[2026-05-04 16:07:27,113] LMCache INFO:[0m Discovered adapter: MockConnectorAdapter [3m(__init__.py:271:lmcache.v1.storage_backend.connector)[0m
+[32;20m[2026-05-04 16:07:27,113] LMCache INFO:[0m Discovered adapter: MooncakestoreConnectorAdapter [3m(__init__.py:271:lmcache.v1.storage_backend.connector)[0m
+[32;20m[2026-05-04 16:07:27,114] LMCache INFO:[0m Discovered adapter: RESPConnectorAdapter [3m(__init__.py:271:lmcache.v1.storage_backend.connector)[0m
+[32;20m[2026-05-04 16:07:27,114] LMCache INFO:[0m Discovered adapter: RedisClusterConnectorAdapter [3m(__init__.py:271:lmcache.v1.storage_backend.connector)[0m
+[32;20m[2026-05-04 16:07:27,114] LMCache INFO:[0m Discovered adapter: RedisConnectorAdapter [3m(__init__.py:271:lmcache.v1.storage_backend.connector)[0m
+[32;20m[2026-05-04 16:07:27,114] LMCache INFO:[0m Discovered adapter: RedisSentinelConnectorAdapter [3m(__init__.py:271:lmcache.v1.storage_backend.connector)[0m
+[32;20m[2026-05-04 16:07:27,115] LMCache INFO:[0m Discovered adapter: S3ConnectorAdapter [3m(__init__.py:271:lmcache.v1.storage_backend.connector)[0m
+[32;20m[2026-05-04 16:07:27,115] LMCache INFO:[0m Discovered adapter: SageMakerHyperPodConnectorAdapter [3m(__init__.py:271:lmcache.v1.storage_backend.connector)[0m
+[32;20m[2026-05-04 16:07:27,116] LMCache INFO:[0m Discovered adapter: ValkeyConnectorAdapter [3m(__init__.py:271:lmcache.v1.storage_backend.connector)[0m
+[32;20m[2026-05-04 16:07:27,116] LMCache INFO:[0m Creating connector for URL: fs://localhost:0/var/vaultai/lmcache [3m(__init__.py:371:lmcache.v1.storage_backend.connector)[0m
+[32;20m[2026-05-04 16:07:27,121] LMCache INFO:[0m Creating FS connector [3m(fs_adapter.py:37:lmcache.v1.storage_backend.connector.fs_adapter)[0m
+[32;20m[2026-05-04 16:07:27,121] LMCache INFO:[0m init remote metadata info with groups: 1, remote metadata fmt: iiiiiii, remote metadata bytes: 28 [3m(protocol.py:84:lmcache.v1.protocol)[0m
+[32;20m[2026-05-04 16:07:27,121] LMCache INFO:[0m init remote connector metadata info, shapes: [torch.Size([2, 1, 256, 1])], dtypes: [torch.bfloat16], fmt: MemoryFormat.KV_2LTD, full chunk size: 1024, single token size: 4, remote metadata bytes: 28 [3m(base_connector.py:74:lmcache.v1.storage_backend.connector.base_connector)[0m
+[32;20m[2026-05-04 16:07:27,121] LMCache INFO:[0m Initialized FSConnector with base paths [PosixPath('/var/vaultai/lmcache')], relative tmp dir: None, read ahead size: None, use O_DIRECT: False [3m(fs_connector.py:121:lmcache.v1.storage_backend.connector.fs_connector)[0m
+[33;20m[2026-05-04 16:07:27,122] LMCache WARNING:[0m Failed to initialize/re-establish remote connection: [Errno 13] Permission denied: '/var/vaultai' [3m(remote_backend.py:160:lmcache.v1.storage_backend.remote_backend)[0m
+[32;20m[2026-05-04 16:07:27,122] LMCache INFO:[0m metadata=LMCacheMetadata(model_name='/lmcache_test_model/', world_size=8, local_world_size=8, worker_id=0, local_worker_id=0, kv_dtype=torch.bfloat16, kv_shape=(1, 2, 512, 1, 1), use_mla=False, role=None, served_model_name=None, chunk_size=256, kv_layer_groups_manager=None, engine_id=None, kv_connector_extra_config=None) [3m(remote_backend.py:82:lmcache.v1.storage_backend.remote_backend)[0m
+[32;20m[2026-05-04 16:07:27,122] LMCache INFO:[0m Connected to remote storage at fs://localhost:0/var/vaultai/lmcache, remote_mla_worker_id_as_0 mode: False [3m(remote_backend.py:83:lmcache.v1.storage_backend.remote_backend)[0m
+[32;20m[2026-05-04 16:07:27,122] LMCache INFO:[0m Created backend: LocalCPUBackend (LocalCPUBackend) [3m(storage_manager.py:1238:lmcache.v1.storage_backend.storage_manager)[0m
+[32;20m[2026-05-04 16:07:27,122] LMCache INFO:[0m Created backend: RemoteBackend (RemoteBackend) [3m(storage_manager.py:1238:lmcache.v1.storage_backend.storage_manager)[0m
+[33;20m[2026-05-04 16:07:27,122] LMCache WARNING:[0m PrometheusLogger is not initialized, event metrics will not be collected [3m(storage_manager.py:292:lmcache.v1.storage_backend.storage_manager)[0m
+[33;20m[2026-05-04 16:07:27,123] LMCache WARNING:[0m Connection is None in contains, returning False [3m(remote_backend.py:165:lmcache.v1.storage_backend.remote_backend)[0m
+[33;20m[2026-05-04 16:07:27,123] LMCache WARNING:[0m Connection is None in batched_submit_put_task, returning None [3m(remote_backend.py:296:lmcache.v1.storage_backend.remote_backend)[0m
+[32;20m[2026-05-04 16:07:27,124] LMCache INFO:[0m Closing StorageManager... [3m(storage_manager.py:1317:lmcache.v1.storage_backend.storage_manager)[0m
+[32;20m[2026-05-04 16:07:27,124] LMCache INFO:[0m Closing storage backend: LocalCPUBackend [3m(storage_manager.py:1322:lmcache.v1.storage_backend.storage_manager)[0m
+[32;20m[2026-05-04 16:07:27,625] LMCache INFO:[0m Storage backend LocalCPUBackend closed successfully [3m(storage_manager.py:1324:lmcache.v1.storage_backend.storage_manager)[0m
+[32;20m[2026-05-04 16:07:27,625] LMCache INFO:[0m Closing storage backend: RemoteBackend [3m(storage_manager.py:1322:lmcache.v1.storage_backend.storage_manager)[0m
+[33;20m[2026-05-04 16:07:27,625] LMCache WARNING:[0m Error occurred when closing remote connection:  [3m(remote_backend.py:624:lmcache.v1.storage_backend.remote_backend)[0m
+[32;20m[2026-05-04 16:07:27,625] LMCache INFO:[0m Storage backend RemoteBackend closed successfully [3m(storage_manager.py:1324:lmcache.v1.storage_backend.storage_manager)[0m
+[32;20m[2026-05-04 16:07:27,625] LMCache INFO:[0m Stopping event loop... [3m(storage_manager.py:1331:lmcache.v1.storage_backend.storage_manager)[0m
+[32;20m[2026-05-04 16:07:27,625] LMCache INFO:[0m Event loop stop signaled [3m(storage_manager.py:1333:lmcache.v1.storage_backend.storage_manager)[0m
+[32;20m[2026-05-04 16:07:27,625] LMCache INFO:[0m Storage manager thread already stopped [3m(storage_manager.py:1350:lmcache.v1.storage_backend.storage_manager)[0m
+[32;20m[2026-05-04 16:07:27,625] LMCache INFO:[0m Storage manager closed. [3m(storage_manager.py:1352:lmcache.v1.storage_backend.storage_manager)[0m
+[33;20m[2026-05-04 16:07:27,626] LMCache WARNING:[0m MemoryObj at 0 is being garbage collected with ref_count=3, pin_count=0. This indicates ref_count_down()/unpin() was not called properly. [3m(memory_management.py:511:lmcache.v1.memory_management)[0m
+Test: Passed - Created storage manager with valid config
+Testing basic operations...
+Phase 1: Testing exists for non-existing keys...
+  Test 1/1 completed in 1.18ms
+  Validation: 1/1 passed (100.0%)
+Phase 2: Testing put operations...
+  Test 1/1 completed in 0.37ms
+  Validation: 1/1 passed (100.0%)
+Phase 3: Testing exists for existing keys...
+  Test 1/1 completed in 0.09ms
+  Validation: 1/1 passed (100.0%)
+Phase 4: Testing get operations...
+  Test 1/1 completed in 0.06ms
+  Validation (not None): 1/1 passed
+  Validation (content correct): 1/1 passed (100.0%)
+
+Performance Results:
+----------------------------------------------------------------------------------------------------------------------
+| Operation            |     Avg (ms) |     Max (ms) |     Min (ms) |   Pass/All |  Pass Rate | |   Throughput  
+----------------------------------------------------------------------------------------------------------------------
+| EXISTS (non-exist)   |     1.179259 |     1.179259 |     1.179259 |        1/1 |     100.0% | |       -       
+| PUT                  |     0.368357 |     0.368357 |     0.368357 |        1/1 |     100.0% | |   5.30 MB/s   
+| EXISTS (exist)       |     0.086357 |     0.086357 |     0.086357 |        1/1 |     100.0% | |       -       
+| GET                  |     0.055208 |     0.055208 |     0.055208 |        1/1 |     100.0% | |   35.38 MB/s  
+----------------------------------------------------------------------------------------------------------------------

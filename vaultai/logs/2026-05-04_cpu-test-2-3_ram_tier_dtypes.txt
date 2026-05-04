@@ -1,0 +1,57 @@
+=== Test 2/3 — dtype: bfloat16 ===
+Test: Passed - Created storage manager with valid config
+Phase 1: Testing exists for non-existing keys...
+  Validation: 20/20 passed (100.0%)
+Phase 2: Testing put operations...
+  Validation: 20/20 passed (100.0%)
+Phase 3: Testing exists for existing keys...
+  Validation: 20/20 passed (100.0%)
+Phase 4: Testing get operations...
+  Validation (not None): 20/20 passed
+  Validation (content correct): 20/20 passed (100.0%)
+Performance Results:
+----------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------
+| EXISTS (non-exist)   |     0.099596 |     0.795902 |     0.048998 |      20/20 |     100.0% | |       -       
+| PUT                  |     0.084772 |     0.219322 |     0.062438 |      20/20 |     100.0% | |   23.04 MB/s  
+| EXISTS (exist)       |     0.025913 |     0.034759 |     0.022739 |      20/20 |     100.0% | |       -       
+| GET                  |     0.024145 |     0.031809 |     0.022539 |      20/20 |     100.0% | |   80.89 MB/s  
+----------------------------------------------------------------------------------------------------------------------
+=== Test 2/3 — dtype: float16 ===
+Test: Passed - Created storage manager with valid config
+Phase 1: Testing exists for non-existing keys...
+  Validation: 20/20 passed (100.0%)
+Phase 2: Testing put operations...
+  Validation: 20/20 passed (100.0%)
+Phase 3: Testing exists for existing keys...
+  Validation: 20/20 passed (100.0%)
+Phase 4: Testing get operations...
+  Validation (not None): 20/20 passed
+  Validation (content correct): 20/20 passed (100.0%)
+Performance Results:
+----------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------
+| EXISTS (non-exist)   |     0.095190 |     0.894399 |     0.038869 |      20/20 |     100.0% | |       -       
+| PUT                  |     0.065652 |     0.109397 |     0.058968 |      20/20 |     100.0% | |   29.75 MB/s  
+| EXISTS (exist)       |     0.022021 |     0.025919 |     0.020920 |      20/20 |     100.0% | |       -       
+| GET                  |     0.022057 |     0.029189 |     0.019649 |      20/20 |     100.0% | |   88.55 MB/s  
+----------------------------------------------------------------------------------------------------------------------
+=== Test 2/3 — dtype: float32 ===
+Test: Passed - Created storage manager with valid config
+Phase 1: Testing exists for non-existing keys...
+  Validation: 20/20 passed (100.0%)
+Phase 2: Testing put operations...
+  Validation: 20/20 passed (100.0%)
+Phase 3: Testing exists for existing keys...
+  Validation: 20/20 passed (100.0%)
+Phase 4: Testing get operations...
+  Validation (not None): 20/20 passed
+  Validation (content correct): 20/20 passed (100.0%)
+Performance Results:
+----------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------
+| EXISTS (non-exist)   |     0.065828 |     0.399337 |     0.035769 |      20/20 |     100.0% | |       -       
+| PUT                  |     0.095691 |     0.197993 |     0.055378 |      20/20 |     100.0% | |   40.82 MB/s  
+| EXISTS (exist)       |     0.037623 |     0.188763 |     0.022279 |      20/20 |     100.0% | |       -       
+| GET                  |     0.023727 |     0.044209 |     0.019559 |      20/20 |     100.0% | |  164.63 MB/s  
+----------------------------------------------------------------------------------------------------------------------
